@@ -11,13 +11,12 @@ def main(args):
     message = ' '.join(args)
 
     req = urllib2.Request(_url)
-    req.add_header('Content-Type', 'application/json')
+    req.add_header('content-type', 'application/json')
 
     res = urllib2.urlopen(req, json.dumps({'message': message}))
 
+    # print the result of request, just cos'
     print(res.read())
-
-    pass
 
 if __name__ == "__main__":
     main(sys.argv[1:])
